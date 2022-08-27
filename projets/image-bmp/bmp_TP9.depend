@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1661516888 source:d:\code_block\bmp_tp9\cbmp.c
+	<stdlib.h>
+	<stdio.h>
+	"cbmp.h"
+
+1513754142 d:\code_block\bmp_tp9\cbmp.h
+
+1661621710 source:d:\code_block\bmp_tp9\main.c
+	<stdlib.h>
+	<stdio.h>
+	"bmp.h"
+
+1661618256 d:\code_block\bmp_tp9\bmp.h
+
+1661621862 source:d:\code_block\bmp_tp9\bmp.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	<math.h>
+

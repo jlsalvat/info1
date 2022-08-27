@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1661349896 source:d:\code_block\wave_tp8\main.c
+	<stdio.h>
+	<math.h>
+	"wave.h"
+
+1661348842 d:\code_block\wave_tp8\wave.h
+
+1661350514 source:d:\code_block\wave_tp8\wave.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	<math.h>
+
+1661432473 source:f:\documents\github\wave_tp8\main.c
+	<stdio.h>
+	<math.h>
+	"wave.h"
+
+1661419470 f:\documents\github\wave_tp8\wave.h
+
+1661423865 source:f:\documents\github\wave_tp8\wave.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	<math.h>
+
