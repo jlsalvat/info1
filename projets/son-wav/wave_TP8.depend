@@ -27,3 +27,17 @@
 	<string.h>
 	<math.h>
 
+1661431643 source:f:\documents\github\info1\projets\son-wav\main.c
+	<stdio.h>
+	<math.h>
+	"wave.h"
+
+1661431643 f:\documents\github\info1\projets\son-wav\wave.h
+
+1661431643 source:f:\documents\github\info1\projets\son-wav\wave.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	<math.h>
+
