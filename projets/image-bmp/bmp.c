@@ -80,11 +80,11 @@ int _validation_tags()
     char buffer[2];
     fseek(fich, 0, SEEK_SET);
     int n=fread( buffer, 1, count, fich);
-       if ( n!=2 )
-       {
-           printf(" ERREUR lecture fichier\n");
-           return EXIT_FAILURE;
-       }
+    if ( n!=2 )
+    {
+        printf(" ERREUR lecture fichier\n");
+        return EXIT_FAILURE;
+    }
     if (memcmp(buffer,tag,2)!=0)
     {
         printf(" ERREUR fichier non BMP\n");
@@ -124,20 +124,36 @@ void _read_header()
 
 void Copier_fichier_bmp(char nomFichierDest[],char nomFichierSrc[])
 {
-    char c;
+    unsigned char * buffer=NULL;
     FILE * source=NULL;
     FILE * copy=NULL;
-    source=fopen(nomFichierSrc,"rb+");
-    copy=fopen(nomFichierDest,"wb+");
-    if(source ==NULL || copy == NULL)
-    {
-        printf("COPIE DE FICHIER : Ouverture des fichiers a echoue \n");
-        exit(EXIT_FAILURE);
+    printf("copie de %s vers %s\n",nomFichierSrc,nomFichierDest);
+    source=fopen(nomFichierSrc,"rb");
+    if(source ==NULL ){
+        printf(":fichier %s n'existe pas",nomFichierSrc);
+        return 0;
     }
-    while ((c = fgetc(source)) != EOF)
-        fputc (c, copy);
+    copy=fopen(nomFichierDest,"wb");
+    if(copy == NULL){
+        printf(":creation du fichier %s a echoue \n",nomFichierDest);
+        fclose(source);
+        return 0;
+    }
+    fseek(source,0,SEEK_END);
+    int size=ftell(source);
+    printf("\n size=%d\n", size);
+    rewind(source);
+    buffer=malloc(size*sizeof(unsigned char));
+
+    fread(buffer, size * sizeof(unsigned char), 1, source);
+    fwrite(buffer, size * sizeof(unsigned char), 1, copy);
+//read(buffer,sizeof(unsigned char),size,source);
+//    write(buffer,sizeof(unsigned char),size,copy);
+
     fclose(source);
     fclose(copy);
+
+    free(buffer);
 
 }
 
@@ -193,7 +209,8 @@ void Read_RGB_bmp(unsigned char *R,unsigned char *G,unsigned char *B)
         *(G+i*header.largeur+j)=data[k++];
         *(R+i*header.largeur+j)=data[k++];
         j++;
-        if((j)%header.largeur==0){
+        if((j)%header.largeur==0)
+        {
             k=k+_calcul_padding(header.largeur);
             i++;
             j=0;

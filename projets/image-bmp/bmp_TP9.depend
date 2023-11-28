@@ -20,3 +20,17 @@
 	<string.h>
 	<math.h>
 
+1701086574 source:f:\documents\github\info1\projets\image-bmp\bmp.c
+	<stdio.h>
+	<stdlib.h>
+	<stdint.h>
+	<string.h>
+	<math.h>
+
+1661618110 source:f:\documents\github\info1\projets\image-bmp\main.c
+	<stdlib.h>
+	<stdio.h>
+	"bmp.h"
+
+1661614656 f:\documents\github\info1\projets\image-bmp\bmp.h
+
