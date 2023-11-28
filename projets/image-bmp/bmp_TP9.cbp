@@ -34,9 +34,6 @@
 		<Unit filename="bmp.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="cbmp.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
